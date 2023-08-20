@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Whats Chatting App</string>
+
+    <string name="user_name">User Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="google">Google</string>
+    <string name="facebook">FaceBook</string>
+    <string name="sign_up_with_phone">Sign Up With Phone</string>
+    <string name="click_for_sign_in">click for sign in</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="click_for_sign_up">click for sign up</string>
+    <string name="already_have_account">Already have account ?</string>
+
+</resources>

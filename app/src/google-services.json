@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "202201312973",
+    "firebase_url": "https://whatsapp-c4a1e-default-rtdb.firebaseio.com",
+    "project_id": "whatsapp-c4a1e",
+    "storage_bucket": "whatsapp-c4a1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202201312973:android:193607784bcbbb998d0384",
+        "android_client_info": {
+          "package_name": "com.menkashah.whatschattingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202201312973-b3jron6qn5fve17bqruer1ir0v24cc50.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.menkashah.whatschattingapp",
+            "certificate_hash": "95dcc74e09ab2d5cc5ba41b4622a53a39c51b794"
+          }
+        },
+        {
+          "client_id": "202201312973-koao02bs3o51fst2gn4ceosqor2evasc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4YA-yuphIMX20RLYxBd5-_S9CDkDS5cE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202201312973-5o5bq0e8lb6qsv59qlep8n6cfegmrca6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

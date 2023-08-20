@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AFA4A4"
+    android:gravity="center"
+    tools:context=".SignUp">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginLeft="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginRight="30dp"
+      android:gravity="center_horizontal"
+      android:orientation="vertical"
+      android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/whatsup"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/whatsapp" />
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/black"
+        android:padding="10dp"
+        android:hint="User name">
+      </EditText>
+
+
+
+
+    <EditText
+        android:id="@+id/editTTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:hint="@string/password"
+        android:textColorHint="@color/black"
+        android:inputType="numberPassword"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/alredayhaveaccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/already_have_account"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="18sp">
+
+    </TextView>
+
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/sign_up"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_corner"
+        android:textStyle="bold" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+      <Button
+          android:id="@+id/google"
+          android:layout_width="130dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="5dp"
+          android:drawableLeft="@drawable/_659939281579738432"
+          android:padding="5dp"
+          android:text="@string/google"
+          android:background="@drawable/rounded_corner"
+          android:textColor="@color/black"/>
+
+
+      <Button
+          android:id="@+id/facebook"
+          android:layout_width="130dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="4dp"
+          android:layout_marginTop="10dp"
+          android:drawableLeft="@drawable/facebook"
+          android:padding="5dp"
+          android:text="@string/facebook"
+          android:textColor="@color/white"
+          android:background="@drawable/rounded_corner"
+         />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_200"
+        android:text="@string/sign_up_with_phone" />
+
+
+  </LinearLayout>
+
+</LinearLayout>
