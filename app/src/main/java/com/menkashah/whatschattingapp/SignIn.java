@@ -18,15 +18,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
-import com.menkashah.whatschattingapp.Model.user;
+import com.menkashah.whatschattingapp.Model.Users;
 import com.menkashah.whatschattingapp.databinding.ActivitySignInBinding;
 
 public class SignIn extends AppCompatActivity {
@@ -55,7 +53,8 @@ public class SignIn extends AppCompatActivity {
         progressDialog.setMessage("Login to Your Account");
 
 //        configure google sign in
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        GoogleSignInOptions gso = new 
+          GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                  .requestIdToken(getString(R.string.default_web_client_id))
                         .requestEmail()
                                 .build();
@@ -65,6 +64,15 @@ public class SignIn extends AppCompatActivity {
         signInBinding.signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(signInBinding.editTextSignEmailAddress.getText().toString().isEmpty())
+                {
+                    signInBinding.editTextSignEmailAddress.setError("Enter your Email");
+                    return;
+                }
+                if(signInBinding.editTextSignNumberPassword.getText().toString().isEmpty()){
+                    signInBinding.editTextSignNumberPassword.setError("Enter your Password");
+                    return;
+                }
                 progressDialog.show();
 
                 auth.signInWithEmailAndPassword(
@@ -139,22 +147,24 @@ public class SignIn extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Log.d("TAG", "signInWithCredential:success");
-                            FirebaseUser users = auth.getCurrentUser();
-                            user user = new user();
-                             user.setUserId(users.getUid());
-                             user.getUserName(users.getDisplayName());
-                             user.getProfilePic(users.getPhotoUrl().toString());
-                             database.getReference().child("Users").child(users.getUid()).setValue(user);                                                                                                                                                                                                                                                                                                                                                                                          
+                            FirebaseUser user = auth.getCurrentUser();
+
+//                            Get value from Google and Store in firebase
+                             Users users = new Users();
+                             users.setUserId(user.getUid());
+                             users.setUserName(user.getDisplayName());
+                             users.setProfilePic(user.getPhotoUrl().toString());
+                             database.getReference().child("Users").child(user.getUid()).setValue(users);
+
                              Intent i = new Intent(SignIn.this,MainActivity.class);
                              startActivity(i);
-                            Toast.makeText(SignIn.this, "sign in with google", Toast.LENGTH_SHORT).show();
+                             Toast.makeText(SignIn.this, "Sign in with google", Toast.LENGTH_SHORT).show();
 
 //                            updateUI(user);
                         }else{
-                              // If sign in fails, display a message to the user.
+
                             Log.w("TAG", "signInWithCredential:failure", task.getException());
-//                            Snackbar.make(signInBinding.mainLayout,"authentication failed",Snackbar.LENGTH_SHORT);
-//                            updateUI(null);
+
                         }
                     }
                 });

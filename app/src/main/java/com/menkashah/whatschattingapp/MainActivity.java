@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.menkashah.whatschattingapp.Fragments.Adapters.FragmentAdapters;
+import com.menkashah.whatschattingapp.Adapters.FragmentAdapters;
 import com.menkashah.whatschattingapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,16 +30,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        getSupportActionBar().hide();
         auth= FirebaseAuth.getInstance();
-
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
 
-
-
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference("message");
-        mRef.setValue("Hello world");
+//        mRef.setValue("Hello world");
 
+//        usetablayout and inside it used viewpager
         mainBinding.viewPager.setAdapter(new FragmentAdapters(getSupportFragmentManager()));
         mainBinding.tabLayout.setupWithViewPager(mainBinding.viewPager);
 
@@ -68,12 +66,18 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.setting:
-                Toast.makeText(this, "setting clicked", Toast.LENGTH_SHORT).show();
+                Intent i3 = new Intent(MainActivity.this,SettingActivity.class);
+                startActivity(i3);
                 break;
             case R.id.logout:
                 auth.signOut();
                 Intent i = new Intent(MainActivity.this, SignIn.class);
                 startActivity(i);
+                break;
+
+            case R.id.groupchat:
+                Intent ii = new Intent(MainActivity.this, GroupChat.class);
+                startActivity(ii);
                 break;
 
         }

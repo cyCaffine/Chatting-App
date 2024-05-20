@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundColor = "#023504">
+
+
+    <ImageView
+        android:id="@+id/back_arrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back2"
+        android:padding="8dp"
+        android:visibility="visible"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/puma"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sharp_1k_plus_24"
+        android:layout_marginTop="20dp"
+        android:layout_alignEnd="@id/profile_image"
+        android:layout_alignBottom="@id/profile_image"/>
+
+    <EditText
+        android:id="@+id/username_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:paddingStart="20dp"
+        android:layout_below="@id/profile_image"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/about_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="About"
+        android:paddingStart="20dp"
+        android:layout_below="@id/username_edittext"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/savebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_edittext"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:text="Save"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_edittext"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rounded_bg"
+        android:orientation="vertical">
+        <!-- Add your content inside this LinearLayout -->
+
+
+    <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_edittext"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="Setting"
+            android:padding="10dp"
+            android:text="Setting"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText1"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="About us"
+            android:padding="10dp"
+            android:text="About us"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText2"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="Invite a Friends"
+            android:padding="10dp"
+            android:text="Invite a Friends"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText3"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="Notification"
+            android:padding="10dp"
+            android:text="Notification"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText4"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="Help"
+            android:padding="10dp"
+            android:text="Help"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION " />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INSTALL_SHORTCUT" />
 
     <application
@@ -13,7 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhatsChattingApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupChat"
+            android:exported="false" />
+        <activity
+            android:name=".chatDetailActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -44,14 +54,10 @@
         </activity>
         <activity
             android:name=".SignUp"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

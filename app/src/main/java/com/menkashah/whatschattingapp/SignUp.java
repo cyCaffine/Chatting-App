@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.menkashah.whatschattingapp.Model.user;
+import com.menkashah.whatschattingapp.Model.Users;
 import com.menkashah.whatschattingapp.databinding.ActivitySignUpBinding;
 
 public class SignUp extends AppCompatActivity {
@@ -53,13 +53,14 @@ public class SignUp extends AppCompatActivity {
                                 progressDialog.dismiss();
 
                          if(task.isSuccessful()){
-                             user user = new user(binding.editTextTextPersonName.getText().toString(),
+                             Users user = new Users(binding.editTextTextPersonName.getText().toString(),
                                      binding.editTTextEmailAddress.getText().toString(),
                                      binding.editTextNumberPassword.getText().toString());
 
 //                             find id with firebase
                              String id = task.getResult().getUser().getUid();
-                             database.getReference().child("users").child(id).setValue(user);
+//                             ek naya node bnega users ke naam se users ke andar child aayega or child ke andr value aayegi upper valen
+                             database.getReference().child("Users").child(id).setValue(user);
 
                              Toast.makeText(SignUp.this, "User Created Successfully", Toast.LENGTH_SHORT).show();
                              
